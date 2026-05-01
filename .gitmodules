@@ -1,0 +1,9 @@
+[submodule "secp256k1"]
+	path = secp256k1
+	url = https://github.com/bitcoin-core/secp256k1.git
+[submodule "salticidae"]
+	path = salticidae
+	url = https://github.com/Determinant/salticidae.git
+[submodule "cpp_random_distributions"]
+	path = cpp_random_distributions
+	url = https://github.com/llersch/cpp_random_distributions.git
