@@ -1,12 +1,13 @@
 # FlashOrder
 
-This repository includes three remote repositories.
+This repository includes four remote repositories.
 
-* libhotstuff_tx: The code base is taken from Hotstuff repository [libhotstuff](https://github.com/hot-stuff/libhotstuff.git) and added support for small-bank transactions.
-* Themis_tx: We have implemented Themis based on the algorithms given in the paper [Themis](https://www.cs.cornell.edu/~mahimna/themis.pdf). Along with that we have also added support for small-bank transactions.
-* FlashOrder: A high-performance fair ordering protocol designed and implemented by us with a small-bank transaction support.
+* libhotstuff: The code base is taken from Hotstuff repository [libhotstuff](https://github.com/hot-stuff/libhotstuff.git) and added support for small-bank transactions.
+* themis: We have implemented Themis based on the algorithms given in the paper [Themis](https://www.cs.cornell.edu/~mahimna/themis.pdf). Along with that we have also added support for small-bank transactions.
+* rashnu: A high-performance fair ordering protocol designed and implemented by us with a small-bank transaction support.
+* flashorder: A high-performance fair ordering protocol designed and implemented by us with a small-bank transaction support.
 
-The directory structure of all the three projects is the same.
+The directory structure of all the four projects is the same.
 
 # FlashOrder Motivation
 
@@ -17,7 +18,7 @@ FlashOrder is a practical high-performance fair ordering protocol. FlashOrder is
 ### Install from the repo
 * git clone https://github.com/kingstenzzz/FlashOrder-paper.git
 * cd FlashOrder-paper/
-* git submodule update --init --recursive
+* cd flashorder/
 
 ### Ensure openssl and libevent are installed on your machine, more specifically, you need:
 * CMake >= 3.9 (cmake)
@@ -32,14 +33,6 @@ FlashOrder is a practical high-performance fair ordering protocol. FlashOrder is
 
 ### Run FlashOrder locally
 * Make sure the hotstuff.conf file has exactly 4 replica signatures.
-* Generate keys and configuration for 4 local replicas:
-
-```
-./flashorder-keygen --num 4
-./flashorder-tls-keygen --num 4
-python3 scripts/gen_conf.py --prefix hotstuff.gen --block-size 100 --pace-maker dummy --fairness-parameter 0.5
-```
-
 * start 4 demo replicas with scripts/run_demo.sh
 * start the demo client with scripts/run_demo_client.sh in another terminal
 * Use Ctrl-C to terminate the client and replicas
@@ -56,8 +49,8 @@ Note: Following steps need to be done on your work computer (a work computer is 
 * If .ssh is not present on the host machine, run following: `mkdir ~/.ssh; chmod 700 ~/.ssh`
 * set PATH variable in ~/.bashrc if not set already `export PATH="$HOME/usr/bin:$PATH"` `export PATH="$HOME/usr/lib:$PATH"` `source ~/.bashrc`
 * Install numpy using following command: `pip3 install numpy`
-* Cloned the latest `FlashOrder-paper` repo and updated all submodules (if not sure, run `git submodule update --init --recursive`). Finally, you have already built the repo so binaries `flashorder-keygen` and `flashorder-tls-keygen` are available in the root directory of the repo.
-* Right now, you should be at the `<path-to-your-FlashOrder-paper-repo>/scripts/deploy` directory in your shell.
+* Cloned the latest `FlashOrder-paper` repo and updated all submodules (if not sure, run `git submodule update --init --recursive`). Finally, you have already built the repo so binaries `hotstuff-keygen` and `hotstuff-tls-keygen` are available in the root directory of the repo.
+* Right now, you should be at the `<path-to-your-FlashOrder-paper-repo>/flashorder/scripts/deploy` directory in your shell.
 
 ### Remote Environment
 
